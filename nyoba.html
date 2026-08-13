@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hero Lanyard 3D Flip Mantul</title>
+  <style>
+    /* Menghilangkan margin bawaan */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* 1. Pengaturan Area Hero Section dengan Efek Perspektif 3D */
+    .hero-section {
+      width: 100%;
+      height: 100vh;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      position: relative;
+      overflow: hidden;
+      perspective: 1000px; /* Memberikan efek kedalaman ruang 3D */
+    }
+
+    /* CONTAINER TALI (Mepet atas layar) */
+    .lanyard-anchor {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 10;
+    }
+
+    /* 2. DESAIN TALI KALUNG (Melar Dinamis) */
+    .lanyard-strap {
+      width: 10px;
+      height: 140px;
+      background: #3b82f6;
+      border-radius: 0 0 4px 4px;
+      position: relative;
+      transform-origin: top center;
+    }
+
+    /* Pengait Besi */
+    .lanyard-clip {
+      width: 16px;
+      height: 16px;
+      background: #94a3b8;
+      border-radius: 50%;
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    /* CONTAINER UTAMA KARTU (Bisa ditarik bebas) */
+    .lanyard-container {
+      position: absolute;
+      width: 220px;
+      height: 340px;
+      transform-origin: top center;
+      will-change: transform, left, top;
+      transform-style: preserve-3d; /* Wajib untuk mendukung rotasi 3D front/back */
+    }
+
+    /* 3. DESAIN STRUKTUR KARTU 3D (DEPAN & BELAKANG) */
+    .nametag-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      will-change: transform;
+    }
+
+    /* Sisi Kartu (Global) */
+    .card-face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden; /* Menyembunyikan sisi belakang saat diputar */
+      border-radius: 16px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      padding: 24px 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      user-select: none;
+      border: 1px solid rgba(0,0,0,0.1);
+    }
+
+    /* --- SISI DEPAN KARTU --- */
+    .card-front {
+      background: #ffffff;
+    }
+
+    .card-hole {
+      width: 24px;
+      height: 6px;
+      background: #475569;
+      border-radius: 3px;
+      position: absolute;
+      top: 10px;
+    }
+
+    .company-logo {
+      font-size: 14px;
+      font-weight: 800;
+      color: #3b82f6;
+      margin-top: 15px;
+      letter-spacing: 1.5px;
+    }
+
+    .avatar-box {
+      width: 100px;
+      height: 120px;
+      background: #f1f5f9;
+      border: 2px solid #e2e8f0;
+      border-radius: 8px;
+      margin: 25px 0 15px 0;
+    }
+
+    .user-name {
+      font-size: 18px;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 0;
+    }
+
+    .user-role {
+      font-size: 13px;
+      color: #64748b;
+      margin: 4px 0 0 0;
+    }
+
+    .barcode {
+      width: 80%;
+      height: 30px;
+      background: repeating-linear-gradient(90deg, #000, #000 2px, #fff 2px, #fff 6px);
+      margin-top: auto;
+      opacity: 0.6;
+    }
+
+    /* --- SISI BELAKANG KARTU --- */
+    .card-back {
+      background: #2563eb; /* Warna solid biru korporat untuk bagian belakang */
+      color: #ffffff;
+      transform: rotateY(180deg); /* Dibalik secara default agar menghadap belakang */
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .back-logo {
+      font-size: 20px;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+
+    .terms-text {
+      font-size: 11px;
+      line-height: 1.4;
+      color: #bfdbfe;
+      opacity: 0.9;
+    }
+
+    .cursor-control {
+      cursor: grab;
+    }
+    .cursor-control:active {
+      cursor: grabbing;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero-section">
+    <!-- Dudukan Tali Mepet Atas -->
+    <div class="lanyard-anchor">
+      <div class="lanyard-strap" id="strap">
+        <div class="lanyard-clip"></div>
+      </div>
+    </div>
+
+    <!-- Kartu Utama -->
+    <div class="lanyard-container cursor-control" id="lanyard">
+      <div class="nametag-card-inner" id="cardInner">
+        
+        <!-- SISI DEPAN -->
+        <div class="card-face card-front">
+          <div class="card-hole"></div>
+          <div class="company-logo">INNOVA TEK</div>
+          <div class="avatar-box"></div>
+          <h3 class="user-name">Aris Setiawan</h3>
+          <p class="user-role">Product Designer</p>
+          <div class="barcode"></div>
+        </div>
+
+        <!-- SISI BELAKANG -->
+        <div class="card-face card-back">
+          <div class="card-hole" style="background: #1d4ed8;"></div>
+          <div class="back-logo">INNOVA TEK</div>
+          <p class="terms-text">
+            Kartu identitas ini adalah milik PT Innova Tek. <br>
+            Harap selalu dikenakan di lingkungan perusahaan. <br>
+            Jika menemukan kartu ini, harap hubungi HRD atau kembalikan ke kantor terdekat.
+          </p>
+          <div style="font-size: 10px; color: #93c5fd; margin-top: 20px;">PROPERTY OF PT INNOVA TEK © 2026</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+   <script>
+    const lanyard = document.getElementById('lanyard');
+    const cardInner = document.getElementById('cardInner');
+    const strap = document.getElementById('strap');
+    
+    // Titik tengah default halaman website (tempat menggantung ideal)
+    let homeX = window.innerWidth / 2;
+    let homeY = window.innerHeight / 2 - 40; 
+
+    // ANIMASI JATUH NATURAL: Kartu dilempar sedikit ke kanan atas di luar layar
+    // Agar saat jatuh, kartu tidak lurus kaku, melainkan mengayun melingkar seperti pendulum
+    let currentX = homeX + 180; 
+    let currentY = -350; 
+    
+    let targetX = homeX; 
+    let targetY = homeY;
+    
+    let vx = 0; let vy = 0;
+    let angleZ = 0; let vAngleZ = 0;
+    let angleY = 0; let targetAngleY = 0; let vAngleY = 0;
+
+    // FORMULA PEGAS UNTUK KAIN LENTUR (Ultra-flexible fabric physics)
+    // Nilai spring diperkecil agar tarikan balik terasa lembut (tidak kaku seperti karet tebal)
+    // Nilai friction ditingkatkan mendekati 1 agar ayunannya bertahan lebih lama sebelum berhenti
+    const springPos = 0.022;    // Tarikan balik yang sangat lembut khas kain panjang
+    const frictionPos = 0.91;   // Redaman rendah agar kartu mengayun dan membal lebih lama
+    const springRot = 0.03;     // Putaran 3D yang lebih lambat dan berbobot
+    const frictionRot = 0.88;   // Redaman putaran halus
+
+    let isDragging = false;
+    let startMouseX = 0; let startMouseY = 0;
+    let startCardX = 0; let startCardY = 0;
+
+    // Fungsi Matematika & Visual untuk Menggerakkan Tali secara Real-Time
+    function updateStrap(cardCenterX, cardTopY) {
+      const anchorX = window.innerWidth / 2;
+      const anchorY = 0;
+      
+      const dx = cardCenterX - anchorX;
+      const dy = cardTopY - anchorY;
+      const distance = Math.sqrt(dx * dx + dy * dy);
+      const strapAngle = Math.atan2(dy, dx) * (180 / Math.PI) - 90;
+      
+      strap.style.height = `${distance}px`;
+      strap.style.transform = `rotate(${strapAngle}deg)`;
+    }
+
+    // Pembuat Logika Tarikan (Berlaku untuk Mouse & Jari HP)
+    function startDrag(clientX, clientY) {
+      isDragging = true;
+      startMouseX = clientX;
+      startMouseY = clientY;
+      startCardX = currentX;
+      startCardY = currentY;
+    }
+
+    function moveDrag(clientX, clientY) {
+      if (!isDragging) return;
+
+      const deltaX = clientX - startMouseX;
+      const deltaY = clientY - startMouseY;
+
+      targetX = startCardX + deltaX;
+      targetY = startCardY + deltaY;
+      currentX = targetX;
+      currentY = targetY;
+
+      // Efek putar 3D (Y) saat ditarik menjauh melewati jarak 140px
+      const distanceFromCenter = targetX - homeX;
+      if (Math.abs(distanceFromCenter) > 140) {
+        targetAngleY = distanceFromCenter > 0 ? 180 : -180;
+      } else {
+        targetAngleY = distanceFromCenter * 0.4; 
+      }
+
+      // Hitung goyangan sudut Z berdasarkan kecepatan tarikan horizontal
+      angleZ = Math.max(Math.min(deltaX * 0.15, 30), -30);
+      angleY = targetAngleY;
+
+      // Render dengan dukungan akselerasi kartu grafis (GPU)
+      lanyard.style.transform = `translate3d(${currentX - 110}px, ${currentY}px, 0) rotate(${angleZ}deg)`;
+      cardInner.style.transform = `rotateY(${angleY}deg)`;
+      
+      updateStrap(currentX, currentY + 10);
+    }
+
+    function stopDrag() {
+      if (!isDragging) return;
+      isDragging = false;
+      
+      targetX = homeX;
+      targetY = homeY;
+      targetAngleY = 0; // Kembalikan kartu menghadap ke depan
+    }
+
+    // EVENT LISTENER MOUSE (LAPTOP / PC)
+    lanyard.addEventListener('mousedown', (e) => startDrag(e.clientX, e.clientY));
+    document.addEventListener('mousemove', (e) => moveDrag(e.clientX, e.clientY));
+    document.addEventListener('mouseup', stopDrag);
+
+    // EVENT LISTENER TOUCH (SMARTPHONE / HP / TABLET)
+    lanyard.addEventListener('touchstart', (e) => {
+      if(e.touches.length > 0) {
+        startDrag(e.touches[0].clientX, e.touches[0].clientY);
+      }
+    });
+    document.addEventListener('touchmove', (e) => {
+      if(e.touches.length > 0) {
+        moveDrag(e.touches[0].clientX, e.touches[0].clientY);
+      }
+    }, { passive: true });
+    document.addEventListener('touchend', stopDrag);
+
+    // LOOP UTAMA ANIMASI FISIKA (Mengontrol efek jatuh bebas & ayunan kain)
+    function updatePhysics() {
+      if (!isDragging) {
+        // 1. Hitung Pergerakan Pegas untuk Koordinat X & Y
+        let ax = (targetX - currentX) * springPos;
+        let ay = (targetY - currentY) * springPos;
+        vx += ax; vy += ay;
+        vx *= frictionPos; vy *= frictionPos;
+        currentX += vx; currentY += vy;
+
+        // 2. LOGIKA AYUNAN KAIN ALAMI (Rotasi Z): 
+        // Menggunakan laju kecepatan vertikal dan horizontal (vx & vy) 
+        // sehingga saat jatuh menghentak, kartu otomatis bergoyang melingkar dengan luwes
+        let targetAngleZ_Dynamic = (vx * 0.4) + (Math.sin(Date.now() * 0.005) * (vy * 0.1)); 
+        let aAngleZ = (targetAngleZ_Dynamic - angleZ) * 0.04;
+        vAngleZ += aAngleZ;
+        vAngleZ *= 0.92; // Redaman ayunan samping yang halus
+        angleZ += vAngleZ;
+
+        // 3. Hitung Putaran Halus 3D Depan-Belakang (Rotasi Y)
+        let aAngleY = (targetAngleY - angleY) * springRot;
+        vAngleY += aAngleY; vAngleY *= frictionRot;
+        angleY += vAngleY;
+
+        // Terapkan semua transformasi fisikanya ke style CSS
+        lanyard.style.transform = `translate3d(${currentX - 110}px, ${currentY}px, 0) rotate(${angleZ}deg)`;
+        cardInner.style.transform = `rotateY(${angleY}deg)`;
+        
+        // Perbarui visual tali lanyard agar ikut melar, menyusut, dan bergetar gemulai
+        updateStrap(currentX, currentY + 10);
+      }
+
+      requestAnimationFrame(updatePhysics);
+    }
+
+    // Mengatur ulang posisi tengah secara otomatis jika ukuran browser diubah (Resize)
+    window.addEventListener('resize', () => {
+      homeX = window.innerWidth / 2;
+      homeY = window.innerHeight / 2 - 40;
+      if (!isDragging) {
+        targetX = homeX;
+        targetY = homeY;
+      }
+    });
+
+    // Jalankan inisialisasi awal saat website dibuka
+    lanyard.style.left = "0px"; lanyard.style.top = "0px"; 
+    updateStrap(currentX, currentY + 10);
+    updatePhysics();
+  </script>
