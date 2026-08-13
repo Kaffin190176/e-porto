@@ -239,6 +239,28 @@
     });
   }
 
+  /* ---------------- Nav dropdown (Refleksi Pengalaman Belajar) ---------------- */
+  var navDropdowns = document.querySelectorAll(".nav-dropdown");
+  if (navDropdowns.length) {
+    navDropdowns.forEach(function (dd) {
+      dd.addEventListener("toggle", function () {
+        if (!dd.open) return;
+        navDropdowns.forEach(function (other) {
+          if (other !== dd) other.removeAttribute("open");
+        });
+      });
+    });
+    document.addEventListener("click", function (e) {
+      navDropdowns.forEach(function (dd) {
+        if (dd.open && !dd.contains(e.target)) dd.removeAttribute("open");
+      });
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key !== "Escape") return;
+      navDropdowns.forEach(function (dd) { dd.removeAttribute("open"); });
+    });
+  }
+
   /* ---------------- Culture / budaya slider (auto + manual) ---------------- */
   document.querySelectorAll(".culture-wrapper").forEach(function (wrapper) {
     var slider = wrapper.querySelector(".culture-slider");

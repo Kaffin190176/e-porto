@@ -881,6 +881,7 @@ section{ padding: var(--section-pad) 0; position: relative; }
 
 /* ---------- Utility ---------- */
 .text-center{ text-align: center; }
+.text-justify{ text-align: justify; text-justify: inter-word; text-indent: 2em; }
 .mt-0{ margin-top: 0 !important; }
 .mb-0{ margin-bottom: 0 !important; }
 .flex-center{ display: flex; align-items: center; justify-content: center; }
@@ -954,7 +955,7 @@ section{ padding: var(--section-pad) 0; position: relative; }
 }
 .highlight-box .eyebrow{ margin-bottom: .8em; }
 .highlight-box h4{ font-size: 1.08rem; margin-bottom: .8em; }
-.highlight-box p{ color: var(--silver); font-size: .95rem; }
+.highlight-box p{ color: var(--silver); font-size: .95rem; text-align: justify; text-justify: inter-word; text-indent: 2em; }
 .highlight-box p:last-child{ margin-bottom: 0; }
 
 /* ---------- Culture slider (Cerita Daerah Asal) ---------- */
@@ -1018,6 +1019,87 @@ section{ padding: var(--section-pad) 0; position: relative; }
   transition: background .25s, border-color .25s, transform .25s;
 }
 .slider-btn:hover{ background: var(--teal-dark); border-color: var(--teal); transform: scale(1.06); }
+
+/* ---------- Nav dropdown (Refleksi Pengalaman Belajar) ---------- */
+.nav-dropdown{ position: relative; }
+.nav-dropdown summary{
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: .4em;
+  font-size: .93rem;
+  font-weight: 600;
+  color: var(--silver);
+  padding: .3em 0;
+  transition: color .25s;
+}
+.nav-dropdown summary::-webkit-details-marker{ display: none; }
+.nav-dropdown summary::after{
+  content: "▾";
+  font-size: .68em;
+  transition: transform .25s var(--ease);
+  color: var(--silver-dim);
+}
+.nav-dropdown[open] summary::after{ transform: rotate(180deg); }
+.nav-dropdown summary:hover{ color: var(--white); }
+.nav-dropdown summary:hover::after{ color: var(--teal-light); }
+
+.dropdown-menu{
+  position: absolute;
+  top: calc(100% + 14px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--card);
+  border: 1px solid var(--card-line);
+  border-radius: var(--radius-sm);
+  padding: .45rem;
+  display: flex;
+  flex-direction: column;
+  gap: .15rem;
+  min-width: 168px;
+  box-shadow: 0 20px 40px -18px rgba(0,0,0,.6);
+  z-index: 50;
+}
+.dropdown-menu a{
+  padding: .6em .85em;
+  border-radius: 8px;
+  font-size: .88rem;
+  font-weight: 600;
+  color: var(--silver);
+  transition: background .2s, color .2s;
+}
+.dropdown-menu a:hover{ background: rgba(74,154,142,.14); color: var(--teal-light); }
+
+/* Mobile menu variant: full-width accordion instead of floating menu */
+.mobile-panel .nav-dropdown{ border-bottom: 1px solid rgba(168,178,193,.1); }
+.mobile-panel .nav-dropdown summary{
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--white);
+  padding: .68em 0;
+  justify-content: space-between;
+}
+.mobile-panel .nav-dropdown summary::after{ font-size: .55em; }
+.mobile-panel .dropdown-menu{
+  position: static;
+  transform: none;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  min-width: 0;
+  padding: 0 0 .7em .3rem;
+  gap: 0;
+}
+.mobile-panel .dropdown-menu a{
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 500;
+  padding: .55em .5em;
+  color: var(--silver);
+}
+.mobile-panel .dropdown-menu a:hover{ color: var(--teal-light); background: transparent; }
 
 /* ---------- Goal cards centering (Tujuan Menjadi Guru) ---------- */
 .card-center{ text-align: center; }
