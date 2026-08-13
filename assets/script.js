@@ -1,7 +1,8 @@
 /* ==========================================================================
-   Elena Marsh — Education Portfolio
+   Kaffin Ahmad Mukhtasor — E-Portfolio PPL Terbimbing
    Shared interactivity: nav, mobile menu, scroll fx, parallax,
-   lightbox gallery, back-to-top, skill bars, filters, forms.
+   lightbox gallery, back-to-top, skill bars, filters, forms,
+   and the culture (budaya daerah) slider.
    ========================================================================== */
 (function () {
   "use strict";
@@ -162,7 +163,7 @@
       var fullSrc = item.getAttribute("data-full") || item.querySelector("img").src;
       var caption = item.getAttribute("data-caption") || "";
       lbImg.src = fullSrc;
-      lbImg.alt = caption || "Enlarged gallery photo";
+      lbImg.alt = caption || "Foto galeri diperbesar";
       lbCap.textContent = caption;
     }
     function openLightbox(index) {
@@ -237,6 +238,53 @@
       }
     });
   }
+
+  /* ---------------- Culture / budaya slider (auto + manual) ---------------- */
+  document.querySelectorAll(".culture-wrapper").forEach(function (wrapper) {
+    var slider = wrapper.querySelector(".culture-slider");
+    var prevSliderBtn = wrapper.querySelector(".prev-btn");
+    var nextSliderBtn = wrapper.querySelector(".next-btn");
+    if (!slider) return;
+
+    function cardStep() {
+      var card = slider.querySelector(".culture-card");
+      if (!card) return 300;
+      var style = window.getComputedStyle(slider);
+      var gap = parseFloat(style.columnGap || style.gap) || 0;
+      return card.getBoundingClientRect().width + gap;
+    }
+
+    if (nextSliderBtn) {
+      nextSliderBtn.addEventListener("click", function () {
+        slider.scrollBy({ left: cardStep(), behavior: prefersReducedMotion ? "auto" : "smooth" });
+      });
+    }
+    if (prevSliderBtn) {
+      prevSliderBtn.addEventListener("click", function () {
+        slider.scrollBy({ left: -cardStep(), behavior: prefersReducedMotion ? "auto" : "smooth" });
+      });
+    }
+
+    // Respect reduced-motion preference: no autoplay, manual controls only.
+    if (prefersReducedMotion) return;
+
+    var paused = false;
+    ["mouseenter", "focusin", "touchstart"].forEach(function (evt) {
+      slider.addEventListener(evt, function () { paused = true; }, { passive: true });
+    });
+    ["mouseleave", "focusout"].forEach(function (evt) {
+      slider.addEventListener(evt, function () { paused = false; });
+    });
+
+    setInterval(function () {
+      if (paused) return;
+      if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 5) {
+        slider.scrollTo({ left: 0, behavior: "smooth" });
+      } else {
+        slider.scrollBy({ left: cardStep(), behavior: "smooth" });
+      }
+    }, 5000);
+  });
 
   /* ---------------- Active year in footer ---------------- */
   document.querySelectorAll(".js-year").forEach(function (el) {
