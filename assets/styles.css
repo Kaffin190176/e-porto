@@ -458,28 +458,50 @@ section{ padding: var(--section-pad) 0; position: relative; }
   margin: 0 auto;
   overflow: visible;
 }
-.lanyard-strap{
+.lanyard-stage::before{
+  content: "";
   position: absolute;
-  top: 0;
-  left: 50%;
-  width: 8px;
-  height: 140px;
-  background: linear-gradient(180deg, var(--teal-light), var(--teal-dark));
-  border-radius: 0 0 4px 4px;
-  transform-origin: top center;
-  transform: translateX(-50%);
-  box-shadow: 0 0 14px -2px var(--teal-glow);
-  z-index: 2;
+  top: -30px;
+  right: -10px;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(217,180,92,.4), transparent 70%);
+  filter: blur(8px);
+  pointer-events: none;
+  z-index: 1;
+  animation: lanyardSunPulse 6s ease-in-out infinite;
 }
+@keyframes lanyardSunPulse{
+  0%, 100%{ opacity: .5; transform: scale(1); }
+  50%{ opacity: .95; transform: scale(1.1); }
+}
+@media (prefers-reduced-motion: reduce){
+  .lanyard-stage::before{ animation: none; opacity: .6; }
+}
+.lanyard-rope{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+  z-index: 2;
+  filter:
+    drop-shadow(0 0 10px var(--teal-glow))
+    drop-shadow(0 0 16px rgba(217,180,92,.3));
+}
+.rope-stop-a{ stop-color: var(--teal-light); }
+.rope-stop-mid{ stop-color: #fff3d6; stop-opacity: .95; }
+.rope-stop-b{ stop-color: var(--teal-dark); }
 .lanyard-clip{
   width: 16px; height: 16px;
   border-radius: 50%;
   background: var(--silver-dim);
   border: 2px solid var(--card-line);
   position: absolute;
-  bottom: -8px;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 0; left: 0;
+  will-change: transform;
+  z-index: 2;
 }
 .lanyard-card{
   position: absolute;
@@ -504,6 +526,7 @@ section{ padding: var(--section-pad) 0; position: relative; }
 .lanyard-face{
   position: absolute;
   inset: 0;
+  overflow: hidden;
   backface-visibility: hidden;
   border-radius: var(--radius-md);
   border: 1px solid var(--card-line);
@@ -514,6 +537,31 @@ section{ padding: var(--section-pad) 0; position: relative; }
   align-items: center;
   text-align: center;
   user-select: none;
+}
+.lanyard-shine{
+  position: absolute;
+  top: -42%;
+  left: -46%;
+  width: 32%;
+  height: 180%;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255,255,255,.85) 0%,
+    rgba(255,244,214,.55) 32%,
+    rgba(255,244,214,.18) 58%,
+    transparent 78%
+  );
+  filter: blur(4px);
+  transform: rotate(32deg) translateX(-170%);
+  opacity: .85;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  z-index: 2;
+  will-change: transform, opacity;
+}
+@media (prefers-reduced-motion: reduce){
+  .lanyard-shine{ opacity: .2; transform: rotate(32deg) translateX(20%); }
 }
 .lanyard-front{ background: var(--card); }
 .lanyard-hole{
@@ -1443,4 +1491,4 @@ section{ padding: var(--section-pad) 0; position: relative; }
   .tl-v-item:nth-child(even) .tl-v-body{ text-align: left; }
   .tl-v-item:nth-child(odd) .tl-v-body .btn{ margin-left: 0; }
   .modal-box{ padding: 1.6rem 1.4rem 1.8rem; }
-}   
+}

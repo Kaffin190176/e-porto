@@ -96,9 +96,17 @@
       </div>
       <div class="hero-media reveal">
         <div class="lanyard-stage" id="lanyardStage" aria-hidden="true">
-          <div class="lanyard-strap" id="lanyardStrap">
-            <div class="lanyard-clip"></div>
-          </div>
+          <svg class="lanyard-rope" id="lanyardRope" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="lanyardRopeGradient" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" class="rope-stop-a"></stop>
+                <stop offset="42%" class="rope-stop-mid"></stop>
+                <stop offset="100%" class="rope-stop-b"></stop>
+              </linearGradient>
+            </defs>
+            <path id="lanyardRopePath" d="" fill="none" stroke="url(#lanyardRopeGradient)" stroke-width="7" stroke-linecap="round"></path>
+          </svg>
+          <div class="lanyard-clip" id="lanyardClip"></div>
           <div class="lanyard-card cursor-control" id="lanyardCard">
             <div class="lanyard-card-inner" id="lanyardCardInner">
 
@@ -112,6 +120,7 @@
                 <h3 class="lanyard-name">Kaffin Ahmad Mukhtasor</h3>
                 <p class="lanyard-role">Mahasiswa PPG · Informatika</p>
                 <div class="lanyard-barcode"></div>
+                <div class="lanyard-shine" aria-hidden="true"></div>
               </div>
 
               <!-- SISI BELAKANG -->
@@ -120,6 +129,7 @@
                 <div class="lanyard-back-brand">KA</div>
                 <p class="lanyard-terms">Kartu identitas ini milik Kaffin Ahmad Mukhtasor, mahasiswa PPG Informatika UNESA yang melaksanakan PPL Terbimbing di SMPN 49 Surabaya.</p>
                 <div class="lanyard-footer-note">E-PORTFOLIO PPL TERBIMBING © 2026</div>
+                <div class="lanyard-shine" aria-hidden="true"></div>
               </div>
 
             </div>
