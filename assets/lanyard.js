@@ -44,7 +44,8 @@
   measureAnchor();
 
   /* ---------------- Rope: rantai titik dengan verlet integration ---------------- */
-  const ROPE_SLACK = 1.035;   // tali panjang & mepet atas → sedikit kendur saja, tidak melingkar besar
+  const ROPE_SLACK = 1.6;    // tali panjang & mepet atas → sedikit kendur saja, tidak melingkar besar
+
   const GRAVITY = 0.62;
   const ROPE_DAMPING = 0.985;
   const ROPE_ITERATIONS = 6;
@@ -191,7 +192,7 @@
   // FORMULA PEGAS UNTUK KAIN LENTUR (Ultra-flexible fabric physics)
   // Spring diperkecil & friction diperbesar supaya kartu jatuh lebih pelan
   // dan berbobot, bukan "snap" cepat ke posisi diam.
-  const springPos = 0.010;    // tarikan balik lembut → jatuh landai, tidak cepat
+  const springPos = 0.014;    // tarikan balik lembut → jatuh landai, tidak cepat
   const frictionPos = 0.94;   // redaman rendah → ayunan bertahan lebih lama
   const springRot = 0.022;    // putaran 3D yang lambat dan berbobot
   const frictionRot = 0.90;   // redaman putaran halus
