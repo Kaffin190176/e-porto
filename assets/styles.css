@@ -1564,3 +1564,81 @@ section{ padding: var(--section-pad) 0; position: relative; }
   color: var(--silver);
   font-size: .98rem;
 }
+/* ---------- Data table (analisis nonmengajar & instrumen penilaian) ---------- */
+.table-wrap{
+  overflow-x: auto;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--card-line);
+  margin-top: 1.4rem;
+}
+.data-table{
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 620px;
+}
+.data-table th{
+  background: var(--card-alt);
+  color: var(--teal-light);
+  font-family: var(--font-mono);
+  font-size: .76rem;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  text-align: left;
+  padding: .9em 1.1em;
+  border-bottom: 1px solid var(--card-line);
+}
+.data-table td{
+  padding: 1em 1.1em;
+  border-bottom: 1px solid var(--card-line);
+  color: var(--silver);
+  font-size: .9rem;
+  vertical-align: top;
+  line-height: 1.55;
+}
+.data-table tr:last-child td{ border-bottom: none; }
+.data-table tr:hover td{ background: rgba(74,154,142,.06); }
+/* ---------- Video documentation cards ---------- */
+.video-card{ padding: 1rem; }
+.video-frame{
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: var(--bg-deep);
+  border: 1px solid var(--card-line);
+}
+.video-frame video{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  background: #000;
+}
+.video-cap{
+  margin: .9em 0 0;
+  font-size: .88rem;
+  color: var(--silver-dim);
+  text-align: center;
+}
+/* ---------- Center foto & video dokumentasi PPL Mandiri ---------- */
+#foto-grid,
+#video-grid{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+#foto-grid .g-item{
+  flex: 1 1 260px;
+  max-width: 280px;
+}
+#video-grid .video-card{
+  flex: 1 1 380px;
+  max-width: 440px;
+}
+
+@media (max-width: 640px){
+  #foto-grid .g-item{ flex-basis: 100%; max-width: 320px; }
+  #video-grid .video-card{ flex-basis: 100%; max-width: 360px; }
+}
