@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UAS PPL: Praktik Mengajar Mandiri Siklus 2 — Kaffin Ahmad Mukhtasor</title>
+<meta name="description" content="UAS PPL — Rancangan pembelajaran praktik mengajar mandiri siklus 2: Bab 1 Struktur Data Non-Linear Tree, Kelas IX SMPN 49 Surabaya.">
+
+<link rel="icon" href="foto/Logo Unesa-01.png">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="bg-layers" aria-hidden="true">
+  <div class="bg-grid" data-parallax="0.06"></div>
+  <span class="bg-dot" style="width:240px;height:240px;background:radial-gradient(circle,rgba(74,154,142,.25),transparent 70%);top:8%;left:-70px;" data-parallax="0.03"></span>
+  <span class="bg-dot" style="width:170px;height:170px;background:radial-gradient(circle,rgba(232,147,90,.18),transparent 70%);top:55%;right:-40px;" data-parallax="0.05"></span>
+  <span class="bg-dot" style="width:150px;height:150px;background:radial-gradient(circle,rgba(217,180,92,.16),transparent 70%);bottom:4%;left:28%;" data-parallax="0.04"></span>
+</div>
+
+<nav class="site-nav" aria-label="Primary">
+  <div class="wrap">
+    <a href="index.html" class="brand">
+      <span class="brand-mark" aria-hidden="true">KA</span>
+      <span>Kaffin Ahmad Mukhtasor<small>Informatika</small></span>
+    </a>
+    <div class="nav-links" role="menubar">
+    <a href="index.html">Home</a>
+    <details class="nav-dropdown">
+        <summary>Refleksi Pengalaman Belajar</summary>
+        <div class="dropdown-menu">
+        <a href="about.html#semester-1">Semester 1</a>
+        <a href="about.html#semester-2">Semester 2</a>
+        <a href="about.html#refleksi-akhir">Refleksi PPG</a>
+        </div>
+    </details>
+    <a href="karya-inovasi.html">Karya Inovatif</a>
+    <details class="nav-dropdown">
+        <summary aria-current="page">PPL Mandiri</summary>
+        <div class="dropdown-menu">
+        <a href="pplmandiri.html">Refleksi Praktik Mengajar</a>
+        <a href="utsppl.html">UTS</a>
+        <a href="uasppl.html" aria-current="page">UAS</a>
+        </div>
+    </details>
+    </div>
+    <div class="nav-cta">
+      <!-- <a href="contact.html" class="btn btn-ghost btn-sm">Get in touch</a> -->
+      <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-panel" id="mobile-menu">
+  <a href="index.html">Home</a>
+  <details class="nav-dropdown">
+    <summary>Refleksi Pengalaman Belajar</summary>
+    <div class="dropdown-menu">
+      <a href="about.html#semester-1">Semester 1</a>
+      <a href="about.html#semester-2">Semester 2</a>
+    </div>
+  </details>
+</div>
+
+<main id="main">
+
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <div class="wrap reveal">
+      <div class="crumb"><a href="index.html">Home</a> / UAS PPL</div>
+      <span class="eyebrow">Ujian Akhir Semester</span>
+      <h1>Praktik Mengajar Mandiri — Siklus 2</h1>
+      <p class="lede">Bab 1 Berpikir Komputasional, topik Struktur Data Non-Linear: Tree (Pohon). Pembelajaran memadukan materi web interaktif “Petualangan Tree” dengan LKPD kelompok “Pohon dalam Kehidupan Sehari-hari” sebagai bukti belajar utama.</p>
+    </div>
+  </section>
+
+  <!-- IDENTITAS MODUL + QUICK LINKS -->
+  <section class="section-tight" id="identitas-modul">
+    <div class="wrap">
+      <div class="card reveal" style="margin-bottom:1.6rem;">
+        <dl class="info-list">
+          <div class="info-row"><dt>Satuan Pendidikan</dt><dd>SMP Negeri 49 Surabaya</dd></div>
+          <div class="info-row"><dt>Mata Pelajaran</dt><dd>Informatika</dd></div>
+          <div class="info-row"><dt>Fase / Kelas</dt><dd>Fase D / Kelas IX (9)</dd></div>
+          <div class="info-row"><dt>Bab / Topik</dt><dd>Bab 1 Berpikir Komputasional — Struktur Data Non-Linear: Tree, Pertemuan ke-2</dd></div>
+          <div class="info-row"><dt>Alokasi Waktu</dt><dd>2 JP × 40 menit = 80 menit (satu pertemuan)</dd></div>
+          <div class="info-row"><dt>Pembagian Kelompok</dt><dd>Kelompok heterogen @ 4 siswa dengan peran bergilir</dd></div>
+          <div class="info-row"><dt>Model Pembelajaran</dt><dd>Pembelajaran Kooperatif berbantuan LKPD dan materi web interaktif</dd></div>
+        </dl>
+      </div>
+
+      <div class="grid grid-3 reveal-stagger">
+        <div class="card card-center reveal" style="--i:0">
+          <div class="card-icon" aria-hidden="true">📋</div>
+          <h3>Modul Ajar</h3>
+          <p>Modul ajar Tree Kelas IX lengkap dengan rubrik, pengayaan dan remedial, serta glosarium.</p>
+          <a href="uas/Modul_Ajar_Tree_IX_LKPD.docx" download class="btn btn-ghost btn-sm" style="margin-top:.8rem;">Unduh Modul ↓</a>
+        </div>
+        <div class="card card-center reveal" style="--i:1">
+          <div class="card-icon" aria-hidden="true">🌳</div>
+          <h3>Materi Web</h3>
+          <p>“Petualangan Tree”, materi interaktif yang ditayangkan di kelas.</p>
+          <a href="https://kaffin190176.github.io/BAB-1-Struktur-Data/tree.html" target="_blank" rel="noopener" class="btn btn-ghost btn-sm" style="margin-top:.8rem;">Buka Materi ↗</a>
+        </div>
+        <div class="card card-center reveal" style="--i:2">
+          <div class="card-icon" aria-hidden="true">📝</div>
+          <h3>LKPD Kelompok</h3>
+          <p>“Pohon dalam Kehidupan Sehari-hari”: silsilah keluarga dan folder di HP/laptop.</p>
+          <a href="uas/LKPD-Tugas-Tree-Kehidupan-Sehari-hari.docx" download class="btn btn-ghost btn-sm" style="margin-top:.8rem;">Unduh LKPD ↓</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1. CAPAIAN, TUJUAN, DPL -->
+  <section class="section-tight band" id="kompetensi-awal">
+    <div class="wrap">
+      <div class="card reveal">
+        <div class="subhead">
+          <span class="subhead-tag">1</span>
+          <h3>Capaian, Tujuan, dan Dimensi Profil Lulusan</h3>
+        </div>
+        <p class="text-justify"><b>Kompetensi awal.</b> Peserta didik telah mempelajari pengantar struktur data pada Pertemuan 1 (data, array, antrean, tumpukan, dan gambaran Node, Tree, Graph).</p>
+        <p class="text-justify"><b>Capaian Pembelajaran Fase D (elemen Berpikir Komputasional).</b> Peserta didik mampu menerapkan berpikir komputasional untuk menghasilkan beberapa solusi dari persoalan dengan data diskrit bervolume kecil, serta mendisposisikan berpikir komputasional dalam bidang lain.</p>
+        <div class="point-list point-list-gold reveal-stagger">
+          <div class="point-item reveal" style="--i:0"><span class="point-num">1</span><div class="point-content"><p>Melalui materi web interaktif dan tanya jawab, peserta didik dapat menjelaskan Tree sebagai struktur data non-linear berjenjang beserta ciri-cirinya, dan menyebutkan arti istilah Root, Node, Edge, Leaf, Parent, Child, Sibling, Level, dan Subtree.</p></div></div>
+          <div class="point-item reveal" style="--i:1"><span class="point-num">2</span><div class="point-content"><p>Melalui LKPD Kegiatan 1 (silsilah keluarga Kakek Hasan) dan Kegiatan 2 (folder di HP/laptop Rani), peserta didik dapat menyusun pohon dari sebuah kasus dengan tepat, teliti, dan bekerja sama.</p></div></div>
+          <div class="point-item reveal" style="--i:2"><span class="point-num">3</span><div class="point-content"><p>Melalui tabel pertanyaan, penelusuran jalur, dan diskusi alasan, peserta didik dapat menentukan root, parent, child, sibling, leaf, level, dan subtree, menghitung jumlah simpul dan tingkat, serta menjelaskan mengapa data berjenjang disimpan sebagai Tree, bukan antrean atau tumpukan.</p></div></div>
+        </div>
+
+        <div class="grid grid-3 reveal-stagger" style="margin-top:1.4rem;">
+          <div class="card card-center reveal" style="--i:0">
+            <div class="card-icon" aria-hidden="true">🧠</div>
+            <h3 style="font-size:1rem;">Penalaran Kritis</h3>
+            <p style="font-size:.86rem;">Membaca struktur Tree, menentukan istilah, menyusun Tree dari kasus silsilah dan folder, serta menjelaskan alasan memilih Tree.</p>
+          </div>
+          <div class="card card-center reveal" style="--i:1">
+            <div class="card-icon" aria-hidden="true">🤝</div>
+            <h3 style="font-size:1rem;">Kolaborasi</h3>
+            <p style="font-size:.86rem;">Bekerja dalam kelompok 4 siswa dengan peran bergilir, berdiskusi sampai seluruh anggota sepakat sebelum menulis jawaban.</p>
+          </div>
+          <div class="card card-center reveal" style="--i:2">
+            <div class="card-icon" aria-hidden="true">🧍</div>
+            <h3 style="font-size:1rem;">Kemandirian</h3>
+            <p style="font-size:.86rem;">Menyimak materi web, mengatur langkah penyelesaian LKPD dalam kelompok, dan merefleksikan capaian belajar sendiri.</p>
+          </div>
+        </div>
+
+        <div class="highlight-box">
+          <span class="eyebrow">Pemahaman Bermakna</span>
+          <p>Banyak data di sekitar kita tersusun berjenjang: folder di dalam folder, jabatan di sekolah, menu aplikasi, dan silsilah keluarga. Tree menggambarkan hubungan berjenjang itu dengan satu Root dan cabang ke bawah, tanpa putaran, sehingga data dapat disusun dan ditelusuri secara terarah.</p>
+        </div>
+        <div class="highlight-box">
+          <span class="eyebrow">Pertanyaan Pemantik</span>
+          <p>“Bagaimana komputer menyimpan ribuan file agar kita mudah menemukannya?” dan “Mengapa silsilah keluarga biasanya digambar bercabang ke bawah, bukan berderet seperti antrean?”</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. SARANA, MODEL, PRINSIP -->
+  <section class="section-tight" id="sarana-model">
+    <div class="wrap">
+      <div class="card reveal">
+        <div class="subhead">
+          <span class="subhead-tag">2</span>
+          <h3>Sarana, Model, dan Prinsip Pembelajaran Mendalam</h3>
+        </div>
+
+        <h4 style="font-size:1.02rem; color:var(--white); margin-bottom:.3em;">Sarana dan Prasarana</h4>
+        <div class="point-list reveal-stagger">
+          <div class="point-item reveal" style="--i:0"><span class="point-num">1</span><div class="point-content"><p>Laptop/komputer, proyektor, layar, dan koneksi internet (dengan salinan berkas HTML sebagai cadangan tanpa internet).</p></div></div>
+          <div class="point-item reveal" style="--i:1"><span class="point-num">2</span><div class="point-content"><p>Materi web “Petualangan Tree”, ditayangkan guru lewat proyektor. Perangkat siswa tidak wajib dan hanya opsional untuk mencoba tombol pada materi web.</p></div></div>
+          <div class="point-item reveal" style="--i:2"><span class="point-num">3</span><div class="point-content"><p>LKPD kelompok “Pohon dalam Kehidupan Sehari-hari” (dicetak, 1 lembar per kelompok) dan kertas lembar untuk Refleksi Pribadi tiap murid.</p></div></div>
+          <div class="point-item reveal" style="--i:3"><span class="point-num">4</span><div class="point-content"><p>Alat tulis, spidol, kertas untuk kartu nama, dan buku tulis untuk catatan istilah beserta padanannya.</p></div></div>
+        </div>
+
+        <div class="grid grid-2 reveal-stagger" style="margin-top:1.6rem;">
+          <div class="card reveal" style="background:var(--card-alt); --i:0">
+            <h3 style="font-size:1.05rem;">Model dan Pendekatan</h3>
+            <p><b style="color:var(--white);">Model:</b> Pembelajaran Kooperatif berbantuan LKPD dan materi web interaktif.<br>
+            <b style="color:var(--white);">Pendekatan:</b> Culturally Responsive Learning, dengan contoh Tree yang dekat dengan murid: silsilah keluarga, folder di HP/laptop, dan struktur jabatan di sekolah.<br>
+            <b style="color:var(--white);">Alur:</b> Memahami → Mengaplikasi → Merefleksi.</p>
+          </div>
+          <div class="card reveal" style="background:var(--card-alt); --i:1">
+            <h3 style="font-size:1.05rem;">Diferensiasi</h3>
+            <p>Kelompok heterogen, kotak Bantuan dan kartu nama pada LKPD, peran kelompok yang bergilir, serta pengayaan dan remedial berdasarkan nilai. Hasil cek cepat apersepsi dipakai guru untuk menentukan kelompok yang perlu pendampingan.</p>
+          </div>
+        </div>
+
+        <h4 style="font-size:1.02rem; color:var(--white); margin:1.6rem 0 .3em;">Penerapan Prinsip Pembelajaran Mendalam</h4>
+        <div class="point-list point-list-gold reveal-stagger">
+          <div class="point-item reveal" style="--i:0"><span class="point-num">1</span><div class="point-content"><h4>Berkesadaran (mindful)</h4><p>Pertanyaan pemantik, penyampaian tujuan dan alur, penentuan peran kelompok, serta refleksi kelompok dan pribadi pada LKPD.</p></div></div>
+          <div class="point-item reveal" style="--i:1"><span class="point-num">2</span><div class="point-content"><h4>Bermakna (meaningful)</h4><p>Silsilah keluarga dan folder di HP/laptop sebagai contoh Tree; menggambar pohon dari kasus nyata dan mencari contoh Tree lain di sekitar.</p></div></div>
+          <div class="point-item reveal" style="--i:2"><span class="point-num">3</span><div class="point-content"><h4>Menggembirakan (joyful)</h4><p>Menyusun kartu nama dan menggambar pohon bersama, serta menelusuri folder Rani dalam kerja kelompok yang santai.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. ALUR -->
+  <section class="section-tight band" id="alur-kegiatan">
+    <div class="wrap">
+      <div class="card reveal">
+        <div class="subhead">
+          <span class="subhead-tag">3</span>
+          <h3>Alur Kegiatan Pembelajaran</h3>
+        </div>
+        <p class="text-justify">Satu pertemuan (2 JP / 80 menit) dengan alur Memahami → Mengaplikasi → Merefleksi.</p>
+
+        <div class="point-list reveal-stagger">
+          <div class="point-item reveal" style="--i:0">
+            <span class="point-num">1</span>
+            <div class="point-content">
+              <h4>Pendahuluan <span class="tag tag-teal">10 menit</span></h4>
+              <p>Salam, doa, presensi, dan pengecekan perlengkapan (2 menit). Apersepsi lewat slide “Ingat Kembali” dan cek cepat “struktur manakah yang bercabang seperti pohon?”, serta pertanyaan pemantik tentang folder dan silsilah keluarga (5 menit). Penyampaian tujuan, alur, dan aturan kerja kelompok (3 menit).</p>
+            </div>
+          </div>
+          <div class="point-item reveal" style="--i:1">
+            <span class="point-num">2</span>
+            <div class="point-content">
+              <h4>Memahami <span class="tag tag-teal">22 menit</span></h4>
+              <p>Mengenal Tree (5 menit): murid menumbuhkan Tree langkah demi langkah, membandingkan lomba mencari List dan Tree, lalu menentukan “Tree atau bukan Tree” pada kartu contoh. Istilah dalam Tree (9 menit): Root, Node, Edge, Leaf, Parent, Child, Sibling, Level, dan Subtree; ciri Tree; padanan istilah Indonesia–Inggris; serta selisih penomoran Level (materi web, Root = 0) dan tingkat (LKPD, akar = 1). Pembentukan kelompok, pembagian LKPD, dan contoh membaca Tree enam langkah (8 menit).</p>
+            </div>
+          </div>
+          <div class="point-item reveal" style="--i:2">
+            <span class="point-num">3</span>
+            <div class="point-content">
+              <h4>Mengaplikasi <span class="tag tag-teal">34 menit</span></h4>
+              <p>Kegiatan 1, Silsilah Keluarga Kakek Hasan (14 menit): kelompok menyusun tujuh orang dari enam petunjuk memakai kartu nama, menggambar bagan pohon, mengisi tabel, menulis jalur dari Lia ke Kakek Hasan, dan menjelaskan mengapa silsilah tidak cocok disimpan seperti antrean atau tumpukan. Kegiatan 2, Folder di HP/Laptop Rani (13 menit): kelompok menggambar struktur folder sebagai pohon dan menjawab lima pertanyaan, termasuk apa yang ikut hilang bila folder “IPA” dihapus. Pembahasan dan penguatan oleh dua juru bicara, termasuk meluruskan miskonsepsi (7 menit).</p>
+            </div>
+          </div>
+          <div class="point-item reveal" style="--i:3">
+            <span class="point-num">4</span>
+            <div class="point-content">
+              <h4>Merefleksi <span class="tag tag-teal">9 menit</span></h4>
+              <p>Peta Konsep Tree pada materi web, lalu kelompok mengisi kesimpulan, contoh Tree lain, bagian paling bermakna, hal yang masih membingungkan, dan penilaian antaranggota. Setiap murid mengisi Refleksi Pribadi pada kertas lembar.</p>
+            </div>
+          </div>
+          <div class="point-item reveal" style="--i:4">
+            <span class="point-num">5</span>
+            <div class="point-content">
+              <h4>Penutup <span class="tag tag-teal">5 menit</span></h4>
+              <p>Murid menyimpulkan pembelajaran, LKPD dan kertas refleksi pribadi dikumpulkan sebagai bukti belajar, dan guru menyampaikan tindak lanjut berupa Kuis Tree individu serta materi lanjutan Graph.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. ASESMEN -->
+  <section class="section-tight" id="asesmen">
+    <div class="wrap">
+      <div class="card reveal">
+        <div class="subhead">
+          <span class="subhead-tag">4</span>
+          <h3>Asesmen</h3>
+        </div>
+        <div class="point-list point-list-gold reveal-stagger">
+          <div class="point-item reveal" style="--i:0">
+            <span class="point-num">1</span>
+            <div class="point-content"><h4>Asesmen Awal (Diagnostik)</h4><p>Cek cepat pada slide “Ingat Kembali” dan pertanyaan pemantik. Hasilnya menentukan kelompok yang perlu pendampingan lebih dan tidak dinilai.</p></div>
+          </div>
+          <div class="point-item reveal" style="--i:1">
+            <span class="point-num">2</span>
+            <div class="point-content"><h4>Asesmen Proses (Formatif)</h4><p>Observasi (Penalaran Kritis, Kolaborasi, Kemandirian; skor maksimal 12), produk LKPD (bagan, tabel, dan alasan; 6 aspek, skor maksimal 24), serta Kuis Tree individu.</p></div>
+          </div>
+          <div class="point-item reveal" style="--i:2">
+            <span class="point-num">3</span>
+            <div class="point-content"><h4>Kuis Tree Individu</h4><p>Setiap murid mengerjakan Kuis Tree (11 soal) pada materi web secara mandiri dan mengirim tangkapan layar skor. Nilai = (jumlah benar ÷ 11) × 100.</p></div>
+          </div>
+          <div class="point-item reveal" style="--i:3">
+            <span class="point-num">4</span>
+            <div class="point-content"><h4>Penghitungan Nilai</h4><p>Nilai akhir = 40% Hasil LKPD Kelompok + 30% Observasi Proses + 30% Kuis Tree Individu. Penilaian antaranggota dan refleksi menjadi data pendukung (tidak diberi skor). Interpretasi: 86–100 Sangat Baik, 71–85 Baik, 56–70 Cukup, ≤ 55 Perlu Bimbingan.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. PENGAYAAN & REMEDIAL, 6. REFLEKSI -->
+  <section class="section-tight band" id="pengayaan-refleksi">
+    <div class="wrap">
+      <div class="card reveal" style="margin-bottom:1.6rem;">
+        <div class="subhead">
+          <span class="subhead-tag">5</span>
+          <h3>Pengayaan dan Remedial</h3>
+        </div>
+        <div class="grid grid-2 reveal-stagger">
+          <div class="card reveal" style="background:var(--card-alt); --i:0">
+            <h3 style="font-size:1.05rem;">Pengayaan (nilai ≥ 86)</h3>
+            <p>Menjelajahi slide Kartu Data Node, Tree dalam Kehidupan Nyata, Menyusun Tree dari Kasus, dan Tantangan Kasus: Struktur Sekolah. Tugasnya membuat pohon sendiri dengan minimal 8 node (misalnya menu kantin, struktur OSIS, atau folder di HP), lalu menentukan Root, jumlah leaf, tinggi, dan satu pasang sibling beserta alasannya.</p>
+          </div>
+          <div class="card reveal" style="background:var(--card-alt); --i:1">
+            <h3 style="font-size:1.05rem;">Remedial (nilai ≤ 70)</h3>
+            <p>Mengulang slide istilah (Root, Parent, Child, Sibling, Level, Subtree), Kartu Istilah, Membaca Tree, dan Menentukan Istilah, serta memperbaiki bagan Kegiatan 1 dengan bimbingan guru atau tutor sebaya. Dinyatakan tuntas jika nilai ≥ 71.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card reveal">
+        <div class="subhead">
+          <span class="subhead-tag">6</span>
+          <h3>Refleksi</h3>
+        </div>
+        <div class="grid grid-2 reveal-stagger">
+          <div class="card reveal" style="background:var(--card-alt); --i:0">
+            <h3 style="font-size:1.05rem;">Refleksi Guru</h3>
+            <p>Apakah peserta didik memahami ciri Tree dan sembilan istilahnya?<br><br>Apakah waktu 80 menit cukup untuk materi web dan dua kegiatan LKPD, dan apakah perbedaan penomoran Level dan tingkat membingungkan?</p>
+          </div>
+          <div class="card reveal" style="background:var(--card-alt); --i:1">
+            <h3 style="font-size:1.05rem;">Refleksi Peserta Didik</h3>
+            <p>Tuliskan satu contoh Tree di sekitarmu selain yang dibahas hari ini.<br><br>Bagian Tree yang paling mudah dan paling sulit, serta pengalamanmu bekerja dalam kelompok.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. LAMPIRAN -->
+  <section class="section-tight" id="lampiran">
+    <div class="wrap">
+      <div class="card reveal">
+        <div class="subhead">
+          <span class="subhead-tag">7</span>
+          <h3>Lampiran</h3>
+        </div>
+
+        <h4 style="font-size:1.02rem; color:var(--white); margin-bottom:.6em;">Istilah Tree dan Padanannya</h4>
+        <div class="grid grid-4 reveal-stagger" style="margin-bottom:1.8rem;">
+          <div class="card card-center reveal" style="--i:0"><div class="card-icon" aria-hidden="true">🌱</div><h3 style="font-size:1rem;">Root (akar)</h3><p style="font-size:.85rem;">Node paling atas, tidak punya parent.</p></div>
+          <div class="card card-center reveal" style="--i:1"><div class="card-icon" aria-hidden="true">🍃</div><h3 style="font-size:1rem;">Leaf (daun)</h3><p style="font-size:.85rem;">Node yang tidak punya anak.</p></div>
+          <div class="card card-center reveal" style="--i:2"><div class="card-icon" aria-hidden="true">👨‍👧</div><h3 style="font-size:1rem;">Parent, Child, Sibling</h3><p style="font-size:.85rem;">Orang tua, anak, dan saudara (satu parent yang sama).</p></div>
+          <div class="card card-center reveal" style="--i:3"><div class="card-icon" aria-hidden="true">🌿</div><h3 style="font-size:1rem;">Subtree (subpohon)</h3><p style="font-size:.85rem;">Sebuah node beserta semua keturunannya.</p></div>
+        </div>
+        <p class="text-justify" style="margin-bottom:1.8rem;"><b>Penomoran.</b> Pada materi web Root berada di Level 0, sedangkan pada LKPD akar berada di tingkat 1 (tingkat = Level + 1). Contohnya Foto2.jpg berada di tingkat 4 pada LKPD atau Level 3 pada materi web.</p>
+
+        <h4 style="font-size:1.02rem; color:var(--white); margin-bottom:.6em;">Isi LKPD “Pohon dalam Kehidupan Sehari-hari”</h4>
+        <div class="point-list reveal-stagger" style="margin-bottom:1.8rem;">
+          <div class="point-item reveal" style="--i:0"><span class="point-num">1</span><div class="point-content"><h4>Pertanyaan pemantik</h4><p>Folder di dalam folder pada HP/laptop dan alasan silsilah keluarga digambar bercabang.</p></div></div>
+          <div class="point-item reveal" style="--i:1"><span class="point-num">2</span><div class="point-content"><h4>Kegiatan 1: Silsilah Keluarga Kakek Hasan</h4><p>Menggambar bagan, mengisi tabel tujuh pertanyaan (akar, anak, orang tua, saudara, daun, jumlah simpul dan tingkat, subpohon), menulis jalur Lia ke Kakek Hasan, dan menjelaskan alasan.</p></div></div>
+          <div class="point-item reveal" style="--i:2"><span class="point-num">3</span><div class="point-content"><h4>Kegiatan 2: Folder di HP/Laptop Rani</h4><p>Menggambar struktur folder sebagai pohon, mengisi tabel lima pertanyaan, serta menjawab dampak menghapus folder “IPA” dan perbandingan daftar panjang dengan folder bercabang.</p></div></div>
+          <div class="point-item reveal" style="--i:3"><span class="point-num">4</span><div class="point-content"><h4>Kesimpulan dan refleksi</h4><p>Kesimpulan kelompok, contoh Tree lain, bagian paling bermakna, penilaian antaranggota, dan refleksi pribadi.</p></div></div>
+        </div>
+
+        <h4 style="font-size:1.02rem; color:var(--white); margin-bottom:.6em;">Rubrik Hasil LKPD Kelompok</h4>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr><th>Aspek</th><th>Skor 4</th><th>Skor 3</th><th>Skor 2</th><th>Skor 1</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="Aspek">Bagan Kegiatan 1 (silsilah, 7 simpul)</td>
+                <td data-label="Skor 4">Semua 7 simpul dan 6 garis tepat</td>
+                <td data-label="Skor 3">6 simpul tepat, atau 7 simpul tepat dengan garis yang masih keliru</td>
+                <td data-label="Skor 2">4–5 simpul tepat</td>
+                <td data-label="Skor 1">Paling banyak 3 dari 7 simpul tepat</td>
+              </tr>
+              <tr>
+                <td data-label="Aspek">Tabel dan jalur Kegiatan 1 (8 butir)</td>
+                <td data-label="Skor 4">8 butir benar</td>
+                <td data-label="Skor 3">6–7 butir benar</td>
+                <td data-label="Skor 2">3–5 butir benar</td>
+                <td data-label="Skor 1">0–2 butir benar</td>
+              </tr>
+              <tr>
+                <td data-label="Aspek">Bagan Kegiatan 2 (folder, 10 simpul)</td>
+                <td data-label="Skor 4">Semua 10 simpul dan 9 garis tepat</td>
+                <td data-label="Skor 3">8–9 simpul tepat, atau 10 simpul tepat dengan garis yang masih keliru</td>
+                <td data-label="Skor 2">5–7 simpul tepat</td>
+                <td data-label="Skor 1">Paling banyak 4 dari 10 simpul tepat</td>
+              </tr>
+              <tr>
+                <td data-label="Aspek">Tabel dan jalur Kegiatan 2 (5 butir)</td>
+                <td data-label="Skor 4">5 butir benar</td>
+                <td data-label="Skor 3">4 butir benar</td>
+                <td data-label="Skor 2">2–3 butir benar</td>
+                <td data-label="Skor 1">0–1 butir benar</td>
+              </tr>
+              <tr>
+                <td data-label="Aspek">Alasan (3 butir)</td>
+                <td data-label="Skor 4">Ketiga alasan tepat dan memakai istilah Tree</td>
+                <td data-label="Skor 3">Dua dari tiga alasan tepat</td>
+                <td data-label="Skor 2">Satu dari tiga alasan tepat</td>
+                <td data-label="Skor 1">Tidak ada alasan atau tidak sesuai</td>
+              </tr>
+              <tr>
+                <td data-label="Aspek">Kesimpulan dan refleksi kelompok</td>
+                <td data-label="Skor 4">Terisi lengkap dan memuat contoh Tree sendiri yang benar</td>
+                <td data-label="Skor 3">Terisi lengkap</td>
+                <td data-label="Skor 2">Terisi sebagian</td>
+                <td data-label="Skor 1">Tidak diisi</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ANALISIS PRODUK RANCANGAN -->
+  <section class="section-tight band" id="analisis-rancangan">
+    <div class="wrap">
+      <div class="card reveal">
+        <div class="subhead">
+          <span class="subhead-tag">A</span>
+          <h3>Analisis Produk Rancangan Pembelajaran</h3>
+        </div>
+
+        <h4 style="font-size:1.02rem; color:var(--white); margin-bottom:.3em;">Kekuatan</h4>
+        <div class="point-list reveal-stagger">
+          <div class="point-item reveal" style="--i:0"><span class="point-num">1</span><div class="point-content"><p>LKPD menjadi bukti belajar utama yang konkret: bagan, tabel, jalur, alasan, dan refleksi. Kasus silsilah keluarga dan folder di HP dekat dengan kehidupan murid sehingga konsep Tree terasa bermakna.</p></div></div>
+          <div class="point-item reveal" style="--i:1"><span class="point-num">2</span><div class="point-content"><p>Pertanyaan alasan (“mengapa tidak cocok disimpan seperti antrean atau tumpukan?”) menghubungkan Tree dengan Pertemuan 1, sehingga murid memilih struktur data berdasarkan sifat datanya, bukan menghafal istilah.</p></div></div>
+          <div class="point-item reveal" style="--i:2"><span class="point-num">3</span><div class="point-content"><p>Miskonsepsi diantisipasi secara eksplisit sebelum dan sesudah LKPD: Root bukan leaf, sibling harus satu parent, satu simpul tidak boleh punya dua orang tua, folder yang masih berisi bukan leaf, dan Level (mulai 0) berbeda dari tingkat (mulai 1).</p></div></div>
+          <div class="point-item reveal" style="--i:3"><span class="point-num">4</span><div class="point-content"><p>Rubrik LKPD terukur karena memakai jumlah butir (7 simpul dan 6 garis, 10 simpul dan 9 garis), dilengkapi kriteria pengayaan dan remedial berdasarkan nilai. Aktivitas web berpoin sengaja tidak dipakai agar 80 menit cukup untuk LKPD dan pembahasannya.</p></div></div>
+        </div>
+
+        <hr class="divider-dashed">
+
+        <h4 style="font-size:1.02rem; color:var(--white); margin-bottom:.3em;">Titik yang Perlu Diperkuat</h4>
+        <div class="point-list point-list-gold reveal-stagger">
+          <div class="point-item reveal" style="--i:0"><span class="point-num">1</span><div class="point-content"><p>Waktu padat: 22 menit materi, 27 menit dua kegiatan LKPD, dan 7 menit pembahasan dalam satu pertemuan. Kelompok yang lambat menggambar bagan berisiko tidak sempat mengerjakan alasan dan refleksi.</p></div></div>
+          <div class="point-item reveal" style="--i:1"><span class="point-num">2</span><div class="point-content"><p>Dua penomoran (Level mulai 0 pada materi web, tingkat mulai 1 pada LKPD) berpotensi membingungkan. Penegasan di depan kelas perlu dipastikan dipahami, mungkin dengan satu contoh yang dikerjakan bersama.</p></div></div>
+          <div class="point-item reveal" style="--i:2"><span class="point-num">3</span><div class="point-content"><p>Kuis Tree individu dikerjakan mandiri di luar jam dan dibuktikan lewat tangkapan layar, sehingga proses pengerjaannya tidak terpantau guru dan bergantung pada ketersediaan perangkat siswa.</p></div></div>
+          <div class="point-item reveal" style="--i:3"><span class="point-num">4</span><div class="point-content"><p>Karena LKPD dikerjakan satu lembar per kelompok, kontribusi tiap anggota hanya terlihat dari penilaian antaranggota dan observasi. Perlu cara tambahan untuk memastikan setiap murid benar-benar memahami, misalnya pertanyaan individu singkat.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a href="index.html" class="brand" style="margin-bottom:1em;">
+          <span class="brand-mark" aria-hidden="true">KA</span>
+          <span>Kaffin Ahmad Mukhtasor<small>Informatika</small></span>
+        </a>
+        <p>Mahasiswa PPG bidang Informatika, Universitas Negeri Surabaya (UNESA), melaksanakan PPL Mandiri di SMPN 49 Surabaya.</p>
+      </div>
+      <div class="footer-links">
+       
+      </div>
+      <div class="footer-links">
+        
+      </div>
+      <div class="footer-contact">
+        <h4>Say hello</h4>
+        <ul>
+          <li>📍 SMPN 49 Surabaya</li>
+          <li>🎓 Universitas Negeri Surabaya (UNESA)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span class="js-year"></span> Kaffin Ahmad Mukhtasor. All rights reserved.</p>
+      <p>E-Portfolio PPL Mandiri — PPG Informatika UNESA.</p>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" aria-label="Back to top">↑</button>
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <button class="lightbox-close" aria-label="Close image viewer">✕</button>
+  <button class="lightbox-prev" aria-label="Previous image">‹</button>
+  <div class="lightbox-inner">
+    <img src="" alt="">
+    <p class="lightbox-cap"></p>
+  </div>
+  <button class="lightbox-next" aria-label="Next image">›</button>
+</div>
+
+<script src="assets/script.js"></script>
+</body>
+</html>
